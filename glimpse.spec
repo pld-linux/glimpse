@@ -1,13 +1,13 @@
-Summary:     Glimpse indexing and query system
-Summary(pl): System indeksacji i wyszukiwania Glimpse
-Name:        glimpse 
-Version:     4.1
-Release:     2
-Group:       Utilities/Text
-Copyright:   Non-profit redistribution & use only
-Source:      ftp://ftp.cs.arizona.edu:/glimpse/%{name}-%{version}.src.tar.gz
-Patch0:      %{name}-optflags.patch
-Patch1:      %{name}-glibc.patch
+Summary:	Glimpse indexing and query system
+Summary(pl):	System indeksacji i wyszukiwania Glimpse
+Name:		glimpse 
+Version:	4.1
+Release:	2
+Group:		Utilities/Text
+Copyright:	Non-profit redistribution & use only
+Source:		ftp://ftp.cs.arizona.edu:/glimpse/%{name}-%{version}.src.tar.gz
+Patch0:		%{name}-optflags.patch
+Patch1:		%{name}-glibc.patch
 BuildRoot:	/tmp/%{name}-%{version}-root
 
 %description
@@ -22,8 +22,8 @@ Dziêki niemu mo¿esz bardzo szybko przeszukaæ wiele plików.
 
 %prep
 %setup -q
-%patch0 -p1 -b .optflags
-%patch1 -p1 -b .glibc
+%patch0 -p1
+%patch1 -p1
 
 %build
 make -f Makefile.linux \
@@ -32,7 +32,7 @@ make -f Makefile.linux \
 
 %install
 rm -rf $RPM_BUILD_ROOT
-install -d $RPM_BUILD_ROOT/usr/{bin,man/man1,sbin}
+install -d $RPM_BUILD_ROOT{%{_bindir},%{_sbindir},%{_mandir}/man1}
 
 install agrep/agrep.1 $RPM_BUILD_ROOT%{_mandir}/man1
 install {glimpse,glimpseindex,glimpseserver}.1 $RPM_BUILD_ROOT%{_mandir}/man1
@@ -41,14 +41,14 @@ install -s bin/{agrep,buildcast,cast,glimpse,glimpseindex,tbuild,uncast,wgconver
 	$RPM_BUILD_ROOT%{_bindir}
 install -s bin/glimpseserver $RPM_BUILD_ROOT%{_sbindir}
 
-gzip -9nf $RPM_BUILD_ROOT%{_mandir}/man1/*
+gzip -9nf $RPM_BUILD_ROOT%{_mandir}/man1/* README COPYRIGHT
 
 %clean
 rm -rf $RPM_BUILD_ROOT
 
 %files
 %defattr(644,root,root,755)
-%doc README COPYRIGHT
+%doc README.gz COPYRIGHT.gz
 %attr(755,root,root) %{_bindir}/*
 %attr(755,root,root) %{_sbindir}/*
 %{_mandir}/man1/*
