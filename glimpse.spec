@@ -3,11 +3,11 @@ Summary(pl):	System indeksacji i wyszukiwania Glimpse
 Name:		glimpse 
 Version:	4.1
 Release:	2
+License:	Non-profit redistribution & use only
 Group:		Applications/Text
 Group(de):	Applikationen/Text
 Group(fr):	Utilitaires/Texte
 Group(pl):	Aplikacje/Tekst
-Copyright:	Non-profit redistribution & use only
 Source0:	ftp://ftp.cs.arizona.edu:/glimpse/%{name}-%{version}.src.tar.gz
 Patch0:		%{name}-optflags.patch
 Patch1:		%{name}-glibc.patch
@@ -20,7 +20,7 @@ individuals for their personal file systems as well as by
 organizations for large data collections.
 
 %description -l pl
-Glimpse jest potê¿nym systemem indeksacji i wyszukiwania informacji.
+Glimpse jest potê¿nym systemem indeksowania i wyszukiwania informacji.
 Dziêki niemu mo¿esz bardzo szybko przeszukaæ wiele plików.
 
 %prep
