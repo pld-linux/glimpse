@@ -52,13 +52,3 @@ rm -rf $RPM_BUILD_ROOT
 %attr(755,root,root) %{_bindir}/*
 %attr(755,root,root) %{_sbindir}/*
 %{_mandir}/man1/*
-
-%changelog
-* Sun Nov 29 1998 Tomasz K³oczko <kloczek@rudy.mif.pg.gda.pl>
-  [4.1-2]
-- added gzipping man pages,
-- use cc instead egcs (for portaability between diffrent platforms).
-
-* Fri Sep 25 1998 Marcin Korzonek <mkorz@shadow.eu.org>
-- allow building from non root account,
-- added pl translation.
