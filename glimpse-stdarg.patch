@@ -1,0 +1,51 @@
+--- glimpse-4.17.4/libtemplate/util/log.c.orig	1999-11-03 21:42:14.000000000 +0100
++++ glimpse-4.17.4/libtemplate/util/log.c	2004-03-29 22:45:14.231224240 +0200
+@@ -55,7 +55,8 @@
+ #include <errno.h>
+ #include <time.h>
+ #include <sys/file.h>
+-#if defined(__STRICT_ANSI__)
++#define USE_STDARG
++#if defined(USE_STDARG)
+ #include <stdarg.h>
+ #else
+ #include <varargs.h>
+@@ -119,7 +120,7 @@
+ /*
+  *  log() - used like printf(3).  Prints message to stdout.
+  */
+-#if defined(__STRICT_ANSI__)
++#if defined(USE_STDARG)
+ void log(char *fmt,...)
+ {
+ 	va_list ap;
+@@ -155,7 +156,7 @@
+ /*
+  *  errorlog() - used like printf(3).  Prints error message to stderr.
+  */
+-#if defined(__STRICT_ANSI__)
++#if defined(USE_STDARG)
+ void errorlog(char *fmt,...)
+ {
+ 	va_list ap;
+@@ -193,7 +194,7 @@
+ /*
+  *  fatal() - used like printf(3).  Prints error message to stderr and exits
+  */
+-#if defined(__STRICT_ANSI__)
++#if defined(USE_STDARG)
+ void fatal(char *fmt,...)
+ {
+ 	va_list ap;
+--- glimpse-4.17.4/libtemplate/include/util.h.orig	1999-11-03 22:40:57.000000000 +0100
++++ glimpse-4.17.4/libtemplate/include/util.h	2004-03-29 23:02:32.741346704 +0200
+@@ -93,7 +93,8 @@
+ void init_log3 _PARAMS((char *,FILE *,FILE *));	/* Initialize log routines */
+ void log_errno _PARAMS((char *));		/* Same as perror(3) */
+ void fatal_errno _PARAMS((char *));		/* Same as perror(3) & exit */
+-#ifdef __STRICT_ANSI__
++#define USE_STDARG
++#ifdef USE_STDARG
+ #include <stdarg.h>
+ void log _PARAMS((char *, ...));		/* Log a message */
+ void errorlog _PARAMS((char *, ...));		/* Log an error message */
