@@ -47,10 +47,10 @@ gzip -9nf $RPM_BUILD_ROOT%{_mandir}/man1/*
 rm -rf $RPM_BUILD_ROOT
 
 %files
-%defattr(644, root, root, 755)
+%defattr(644,root,root,755)
 %doc README COPYRIGHT
-%attr(755, root, root) %{_bindir}/*
-%attr(755, root, root) %{_sbindir}/*
+%attr(755,root,root) %{_bindir}/*
+%attr(755,root,root) %{_sbindir}/*
 %{_mandir}/man1/*
 
 %changelog
