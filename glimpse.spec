@@ -6,6 +6,7 @@ Release:	3
 License:	non-profit
 Group:		Applications/Text
 Source0:	ftp://ftp.cs.arizona.edu:/glimpse/%{name}-%{version}.src.tar.gz
+# Source0-md5: 6c5c4f3e0011b366c5feaa2e8d1d3b28
 Patch0:		%{name}-optflags.patch
 Patch1:		%{name}-glibc.patch
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
