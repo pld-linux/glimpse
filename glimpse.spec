@@ -2,8 +2,8 @@ Summary:	Glimpse indexing and query system
 Summary(pl):	System indeksacji i wyszukiwania Glimpse
 Name:		glimpse
 Version:	4.1
-Release:	2
-License:	Non-profit redistribution & use only
+Release:	3
+License:	non-profit
 Group:		Applications/Text
 Source0:	ftp://ftp.cs.arizona.edu:/glimpse/%{name}-%{version}.src.tar.gz
 Patch0:		%{name}-optflags.patch
@@ -41,14 +41,12 @@ install bin/{agrep,buildcast,cast,glimpse,glimpseindex,tbuild,uncast,wgconvert} 
 	$RPM_BUILD_ROOT%{_bindir}
 install bin/glimpseserver $RPM_BUILD_ROOT%{_sbindir}
 
-gzip -9nf README COPYRIGHT
-
 %clean
 rm -rf $RPM_BUILD_ROOT
 
 %files
 %defattr(644,root,root,755)
-%doc README.gz COPYRIGHT.gz
+%doc README COPYRIGHT
 %attr(755,root,root) %{_bindir}/*
 %attr(755,root,root) %{_sbindir}/*
 %{_mandir}/man1/*
