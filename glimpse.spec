@@ -51,7 +51,7 @@ rm -rf $RPM_BUILD_ROOT
 %doc README COPYRIGHT
 %attr(755, root, root) /usr/bin/*
 %attr(755, root, root) /usr/sbin/*
-%attr(644, root,  man) %{_mandir}/man1/*
+%{_mandir}/man1/*
 
 %changelog
 * Sun Nov 29 1998 Tomasz K³oczko <kloczek@rudy.mif.pg.gda.pl>
