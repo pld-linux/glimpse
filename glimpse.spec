@@ -56,7 +56,7 @@ rm -rf $RPM_BUILD_ROOT
 %changelog
 * Sun Nov 29 1998 Tomasz K³oczko <kloczek@rudy.mif.pg.gda.pl>
   [4.1-2]
-- added gziping man pagrs,
+- added gziping man pages,
 - use cc instead egcs (for portaability between diffrent platforms).
 
 * Fri Sep 25 1998 Marcin Korzonek <mkorz@shadow.eu.org>
