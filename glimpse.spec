@@ -38,7 +38,7 @@ install agrep/agrep.1 $RPM_BUILD_ROOT%{_mandir}/man1
 install {glimpse,glimpseindex,glimpseserver}.1 $RPM_BUILD_ROOT%{_mandir}/man1
 
 install -s bin/{agrep,buildcast,cast,glimpse,glimpseindex,tbuild,uncast,wgconvert} \
-	$RPM_BUILD_ROOT/usr/bin
+	$RPM_BUILD_ROOT%{_bindir}
 install -s bin/glimpseserver $RPM_BUILD_ROOT/usr/sbin
 
 gzip -9nf $RPM_BUILD_ROOT%{_mandir}/man1/*
@@ -49,7 +49,7 @@ rm -rf $RPM_BUILD_ROOT
 %files
 %defattr(644, root, root, 755)
 %doc README COPYRIGHT
-%attr(755, root, root) /usr/bin/*
+%attr(755, root, root) %{_bindir}/*
 %attr(755, root, root) /usr/sbin/*
 %{_mandir}/man1/*
 
