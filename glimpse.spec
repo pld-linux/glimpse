@@ -1,13 +1,13 @@
 Summary:	Glimpse indexing and query system
 Summary(pl):	System indeksowania i wyszukiwania Glimpse
 Name:		glimpse
-Version:	4.17.4
+Version:	4.18.0
 Release:	1
 License:	non-profit
 Group:		Applications/Text
 #Source0:	ftp://ftp.cs.arizona.edu/glimpse/%{name}-%{version}.src.tar.gz
 Source0:	http://webglimpse.net/trial/%{name}-%{version}.tar.gz
-# Source0-md5:	c005f3ca3f3ab64473405a1d5901dd3f
+# Source0-md5:	f62819ef08f679bb7b468fa3dc19edd7
 Patch0:		%{name}-optflags.patch
 Patch1:		%{name}-stdarg.patch
 URL:		http://webglimpse.net/
@@ -57,7 +57,7 @@ rm -rf $RPM_BUILD_ROOT
 
 %files
 %defattr(644,root,root,755)
-%doc CHANGES CONTRIBUTIONS COPYRIGHT ChangeLog KNOWN_BUGS README README.install TODO
+%doc CHANGES CONTRIBUTIONS COPYRIGHT ChangeLog KNOWN_BUGS README README.install
 %attr(755,root,root) %{_bindir}/*
 %attr(755,root,root) %{_sbindir}/*
 %{_mandir}/man1/*

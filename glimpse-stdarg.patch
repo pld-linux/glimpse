@@ -10,13 +10,13 @@
  #include <stdarg.h>
  #else
  #include <varargs.h>
-@@ -119,7 +120,7 @@
- /*
-  *  log() - used like printf(3).  Prints message to stdout.
+@@ -121,7 +121,7 @@
+  *  glimpselog() - used like printf(3).  Prints message to stdout.
   */
+ 
 -#if defined(__STRICT_ANSI__)
 +#if defined(USE_STDARG)
- void log(char *fmt,...)
+ void glimpselog(char *fmt,...)
  {
  	va_list ap;
 @@ -155,7 +156,7 @@
