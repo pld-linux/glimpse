@@ -4,21 +4,23 @@ Name:		glimpse
 Version:	4.1
 Release:	2
 Group:		Utilities/Text
+Group(fr):	Utilitaires/Texte
+Group(pl):	Narzêdzia/Tekst
 Copyright:	Non-profit redistribution & use only
-Source:		ftp://ftp.cs.arizona.edu:/glimpse/%{name}-%{version}.src.tar.gz
+Source0:	ftp://ftp.cs.arizona.edu:/glimpse/%{name}-%{version}.src.tar.gz
 Patch0:		%{name}-optflags.patch
 Patch1:		%{name}-glibc.patch
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
 %description
-Glimpse is a very powerful indexing and query system that allows you to
-search through all your files very quickly.  It can be used by
-individuals for their personal file systems as well as by organizations
-for large data collections.
+Glimpse is a very powerful indexing and query system that allows you
+to search through all your files very quickly. It can be used by
+individuals for their personal file systems as well as by
+organizations for large data collections.
 
 %description -l pl
 Glimpse jest potê¿nym systemem indeksacji i wyszukiwania informacji.
-Dziêki niemu mo¿esz bardzo szybko przeszukaæ wiele plików. 
+Dziêki niemu mo¿esz bardzo szybko przeszukaæ wiele plików.
 
 %prep
 %setup -q
