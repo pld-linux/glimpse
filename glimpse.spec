@@ -28,7 +28,7 @@ Dziêki niemu mo¿esz bardzo szybko przeszukaæ wiele plików.
 %patch1 -p1
 
 %build
-make -f Makefile.linux \
+%{__make} -f Makefile.linux \
 	OPTIMIZEFLAGS="$RPM_OPT_FLAGS" \
 	CC="cc" ISO_CHAR_SET="1" \
 
