@@ -2,12 +2,12 @@ Summary:     Glimpse indexing and query system
 Summary(pl): System indeksacji i wyszukiwania Glimpse
 Name:        glimpse 
 Version:     4.1
-Release:     1
-Source:      ftp://ftp.cs.arizona.edu:/glimpse/%{name}-%{version}.src.tar.gz
-Patch:       %{name}-optflags.patch
-Patch1:      %{name}-glibc.patch
-Copyright:   Non-profit redistribution & use only
+Release:     2
 Group:       Utilities/Text
+Copyright:   Non-profit redistribution & use only
+Source:      ftp://ftp.cs.arizona.edu:/glimpse/%{name}-%{version}.src.tar.gz
+Patch0:      %{name}-optflags.patch
+Patch1:      %{name}-glibc.patch
 Buildroot:   /tmp/%{name}-%{version}-root
 
 %description
@@ -22,25 +22,26 @@ Dziêki niemu mo¿esz bardzo szybko przeszukaæ wiele plików.
 
 %prep
 %setup -q
-%patch -p1 -b .optflags
+%patch0 -p1 -b .optflags
 %patch1 -p1 -b .glibc
 
 %build
 make -f Makefile.linux \
-	"OPTIMIZEFLAGS=$RPM_OPT_FLAGS" \
-	CC=egcs \
-	ISO_CHAR_SET=1 \
+	OPTIMIZEFLAGS="$RPM_OPT_FLAGS" \
+	CC="cc" ISO_CHAR_SET="1" \
 
 %install
 rm -rf $RPM_BUILD_ROOT
-
 install -d $RPM_BUILD_ROOT/usr/{bin,man/man1,sbin}
 
 install agrep/agrep.1 $RPM_BUILD_ROOT/usr/man/man1
 install {glimpse,glimpseindex,glimpseserver}.1 $RPM_BUILD_ROOT/usr/man/man1
 
-install -s bin/{agrep,buildcast,cast,glimpse,glimpseindex,tbuild,uncast,wgconvert} $RPM_BUILD_ROOT/usr/bin
+install -s bin/{agrep,buildcast,cast,glimpse,glimpseindex,tbuild,uncast,wgconvert} \
+	$RPM_BUILD_ROOT/usr/bin
 install -s bin/glimpseserver $RPM_BUILD_ROOT/usr/sbin
+
+gzip -9nf $RPM_BUILD_ROOT/usr/man/man1/*
 
 %clean
 rm -rf $RPM_BUILD_ROOT
@@ -53,6 +54,11 @@ rm -rf $RPM_BUILD_ROOT
 %attr(644, root,  man) /usr/man/man1/*
 
 %changelog
+* Sun Nov 29 1998 Tomasz K³oczko <kloczek@rudy.mif.pg.gda.pl>
+  [4.1-2]
+- added gziping man pagrs,
+- use cc instead egcs (for portaability between diffrent platforms).
+
 * Fri Sep 25 1998 Marcin Korzonek <mkorz@shadow.eu.org>
 - allow building from non root account,
 - added pl translation.
