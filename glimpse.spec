@@ -5,9 +5,6 @@ Version:	4.1
 Release:	2
 License:	Non-profit redistribution & use only
 Group:		Applications/Text
-Group(de):	Applikationen/Text
-Group(fr):	Utilitaires/Texte
-Group(pl):	Aplikacje/Tekst
 Source0:	ftp://ftp.cs.arizona.edu:/glimpse/%{name}-%{version}.src.tar.gz
 Patch0:		%{name}-optflags.patch
 Patch1:		%{name}-glibc.patch
