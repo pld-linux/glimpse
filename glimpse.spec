@@ -1,6 +1,6 @@
 Summary:	Glimpse indexing and query system
 Summary(pl):	System indeksacji i wyszukiwania Glimpse
-Name:		glimpse 
+Name:		glimpse
 Version:	4.1
 Release:	2
 License:	Non-profit redistribution & use only
