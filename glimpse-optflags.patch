@@ -1,15 +1,71 @@
---- glimpse-4.1/Makefile.linux-org	Fri Sep 25 23:00:45 1998
-+++ glimpse-4.1/Makefile.linux	Fri Sep 25 23:01:33 1998
-@@ -17,10 +17,10 @@
- UTIME = 1
+--- glimpse-4.17.4/dynfilters/Makefile.in.orig	2001-07-07 07:47:08.000000000 +0200
++++ glimpse-4.17.4/dynfilters/Makefile.in	2004-03-29 22:35:27.800375280 +0200
+@@ -1,11 +1,11 @@
+ # Set this variable to the name of your C compiler
+-CC=gcc
++CC=@CC@
  
- # Define ISO_CHAR_SET to be 1 if you want to use the international 8bit character set. Else define it to be 0.
--ISO_CHAR_SET = 0
-+ISO_CHAR_SET = 1
+ # Provide optimization flages here. These settings are fine for egcs and
+ # gcc >= 2.95. If you use an older gcc version, change -O3 to -O2. If you
+ # use a non-gcc compiler, change this line to
+ # CFLAGS=-O
+-CFLAGS=-O3 -fomit-frame-pointer
++CFLAGS=@CFLAGS@ -fomit-frame-pointer
  
- # You might have to change this depending on your machine configuration.
--CC     = gcc -m486
-+CC     = gcc 
+ # Additional definitions you would like to pass to the compiler. You usually
+ # can leave this line alone.
+--- glimpse-4.17.4/agrep/Makefile.in.orig	2001-05-21 06:48:50.000000000 +0200
++++ glimpse-4.17.4/agrep/Makefile.in	2004-03-29 22:43:03.227139888 +0200
+@@ -50,7 +50,7 @@
  
- SHELL = /bin/sh
+ # AGREP_POINTER is defined in autoconf.h
+ MYDEFINEFLAGS	= -DMEASURE_TIMES=0 -DDOTCOMPRESSED=$(DOTCOMPRESSED)
+-CFLAGS		= $(MYDEFINEFLAGS) $(INCLUDEFLAGS) $(DEFS)
++CFLAGS		= @CFLAGS@ $(MYDEFINEFLAGS) $(INCLUDEFLAGS) $(DEFS)
+ LDFLAGS		=
+ OTHERLIBS	=
  
+--- glimpse-4.17.4/index/Makefile.in.orig	2001-08-21 06:33:42.000000000 +0200
++++ glimpse-4.17.4/index/Makefile.in	2004-03-29 22:47:15.064854736 +0200
+@@ -47,7 +47,7 @@
+ OPTIMIZEFLAGS	= -O2
+ INCLUDEFLAGS	= -I$(INDEXDIR) -I$(AGREPDIR) -I$(TEMPLATEDIR)/include 
+ DEFINEFLAGS	= $(DEFS)
+-CFLAGS		= $(INCLUDEFLAGS)
++CFLAGS		= @CFLAGS@ $(INCLUDEFLAGS)
+ 
+ TEST	      =	test
+ OBJS	      =	region.o \
+--- glimpse-4.17.4/Makefile.in.orig	2001-08-21 04:53:01.000000000 +0200
++++ glimpse-4.17.4/Makefile.in	2004-03-29 22:48:01.413808624 +0200
+@@ -51,7 +51,7 @@
+ 
+ OPTIMIZEFLAGS   = -O2
+ INCLUDEFLAGS    = -I$(INDEXDIR) -I$(AGREPDIR) -I$(TEMPLATEDIR)/include
+-CFLAGS          = $(INCLUDEFLAGS) $(DEFS)
++CFLAGS          = @CFLAGS@ $(INCLUDEFLAGS) $(DEFS)
+ 
+ OBJS		= get_filename.o \
+ 		get_index.o \
+--- glimpse-4.17.4/compress/Makefile.in.orig	2001-05-21 06:48:52.000000000 +0200
++++ glimpse-4.17.4/compress/Makefile.in	2004-03-29 22:49:46.476836616 +0200
+@@ -37,7 +37,7 @@
+ 
+ OPTIMIZEFLAGS	= -O2
+ INCLUDEFLAGS	= -I$(INDEXDIR) -I$(AGREPDIR) -I$(TEMPLATEDIR)/include
+-CFLAGS		= $(INCLUDEFLAGS) $(OPTIMIZEFLAGS)
++CFLAGS		= @CFLAGS@ $(INCLUDEFLAGS)
+ LDFLAGS		=
+ OTHERLIBS	=
+ 
+--- glimpse-4.17.4/libtemplate/util/Makefile.in.orig	2004-03-29 23:03:24.000000000 +0200
++++ glimpse-4.17.4/libtemplate/util/Makefile.in	2004-03-29 23:03:31.784370800 +0200
+@@ -21,7 +21,7 @@
+ 
+ DEBUG           =
+ INCLUDE         = -I../include
+-CFLAGS          = $(DEFS) $(INCLUDE)
++CFLAGS          = @CFLAGS@ $(DEFS) $(INCLUDE)
+ 
+ LIBFILE         = libutil.a
+ LIBDIR		= ../lib
