@@ -5,7 +5,7 @@ Version:	4.1
 Release:	3
 License:	non-profit
 Group:		Applications/Text
-Source0:	ftp://ftp.cs.arizona.edu:/glimpse/%{name}-%{version}.src.tar.gz
+Source0:	ftp://ftp.cs.arizona.edu/glimpse/%{name}-%{version}.src.tar.gz
 # Source0-md5: 6c5c4f3e0011b366c5feaa2e8d1d3b28
 Patch0:		%{name}-optflags.patch
 Patch1:		%{name}-glibc.patch
@@ -19,7 +19,7 @@ organizations for large data collections.
 
 %description -l pl
 Glimpse jest potê¿nym systemem indeksowania i wyszukiwania informacji.
-Dziêki niemu mo¿esz bardzo szybko przeszukaæ wiele plików.
+Dziêki niemu mo¿na bardzo szybko przeszukaæ wiele plików.
 
 %prep
 %setup -q
@@ -29,7 +29,8 @@ Dziêki niemu mo¿esz bardzo szybko przeszukaæ wiele plików.
 %build
 %{__make} -f Makefile.linux \
 	OPTIMIZEFLAGS="%{rpmcflags}" \
-	CC="%{__cc}" ISO_CHAR_SET="1" \
+	CC="%{__cc}" \
+	ISO_CHAR_SET="1"
 
 %install
 rm -rf $RPM_BUILD_ROOT
