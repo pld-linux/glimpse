@@ -8,7 +8,7 @@ Copyright:   Non-profit redistribution & use only
 Source:      ftp://ftp.cs.arizona.edu:/glimpse/%{name}-%{version}.src.tar.gz
 Patch0:      %{name}-optflags.patch
 Patch1:      %{name}-glibc.patch
-Buildroot:   /tmp/%{name}-%{version}-root
+BuildRoot:	/tmp/%{name}-%{version}-root
 
 %description
 Glimpse is a very powerful indexing and query system that allows you to
