@@ -1,0 +1,15 @@
+--- glimpse-4.1/Makefile.linux-org	Fri Sep 25 23:00:45 1998
++++ glimpse-4.1/Makefile.linux	Fri Sep 25 23:01:33 1998
+@@ -17,10 +17,10 @@
+ UTIME = 1
+ 
+ # Define ISO_CHAR_SET to be 1 if you want to use the international 8bit character set. Else define it to be 0.
+-ISO_CHAR_SET = 0
++ISO_CHAR_SET = 1
+ 
+ # You might have to change this depending on your machine configuration.
+-CC     = gcc -m486
++CC     = gcc 
+ 
+ SHELL = /bin/sh
+ 
