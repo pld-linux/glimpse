@@ -3,9 +3,10 @@ Summary(pl):	System indeksacji i wyszukiwania Glimpse
 Name:		glimpse 
 Version:	4.1
 Release:	2
-Group:		Utilities/Text
+Group:		Applications/Text
+Group(de):	Applikationen/Text
 Group(fr):	Utilitaires/Texte
-Group(pl):	Narzêdzia/Tekst
+Group(pl):	Aplikacje/Tekst
 Copyright:	Non-profit redistribution & use only
 Source0:	ftp://ftp.cs.arizona.edu:/glimpse/%{name}-%{version}.src.tar.gz
 Patch0:		%{name}-optflags.patch
@@ -29,8 +30,8 @@ Dziêki niemu mo¿esz bardzo szybko przeszukaæ wiele plików.
 
 %build
 %{__make} -f Makefile.linux \
-	OPTIMIZEFLAGS="$RPM_OPT_FLAGS" \
-	CC="cc" ISO_CHAR_SET="1" \
+	OPTIMIZEFLAGS="%{rpmcflags}" \
+	CC="%{__cc}" ISO_CHAR_SET="1" \
 
 %install
 rm -rf $RPM_BUILD_ROOT
@@ -39,11 +40,11 @@ install -d $RPM_BUILD_ROOT{%{_bindir},%{_sbindir},%{_mandir}/man1}
 install agrep/agrep.1 $RPM_BUILD_ROOT%{_mandir}/man1
 install {glimpse,glimpseindex,glimpseserver}.1 $RPM_BUILD_ROOT%{_mandir}/man1
 
-install -s bin/{agrep,buildcast,cast,glimpse,glimpseindex,tbuild,uncast,wgconvert} \
+install bin/{agrep,buildcast,cast,glimpse,glimpseindex,tbuild,uncast,wgconvert} \
 	$RPM_BUILD_ROOT%{_bindir}
-install -s bin/glimpseserver $RPM_BUILD_ROOT%{_sbindir}
+install bin/glimpseserver $RPM_BUILD_ROOT%{_sbindir}
 
-gzip -9nf $RPM_BUILD_ROOT%{_mandir}/man1/* README COPYRIGHT
+gzip -9nf README COPYRIGHT
 
 %clean
 rm -rf $RPM_BUILD_ROOT
