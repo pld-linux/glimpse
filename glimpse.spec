@@ -34,14 +34,14 @@ make -f Makefile.linux \
 rm -rf $RPM_BUILD_ROOT
 install -d $RPM_BUILD_ROOT/usr/{bin,man/man1,sbin}
 
-install agrep/agrep.1 $RPM_BUILD_ROOT/usr/man/man1
-install {glimpse,glimpseindex,glimpseserver}.1 $RPM_BUILD_ROOT/usr/man/man1
+install agrep/agrep.1 $RPM_BUILD_ROOT%{_mandir}/man1
+install {glimpse,glimpseindex,glimpseserver}.1 $RPM_BUILD_ROOT%{_mandir}/man1
 
 install -s bin/{agrep,buildcast,cast,glimpse,glimpseindex,tbuild,uncast,wgconvert} \
 	$RPM_BUILD_ROOT/usr/bin
 install -s bin/glimpseserver $RPM_BUILD_ROOT/usr/sbin
 
-gzip -9nf $RPM_BUILD_ROOT/usr/man/man1/*
+gzip -9nf $RPM_BUILD_ROOT%{_mandir}/man1/*
 
 %clean
 rm -rf $RPM_BUILD_ROOT
@@ -51,7 +51,7 @@ rm -rf $RPM_BUILD_ROOT
 %doc README COPYRIGHT
 %attr(755, root, root) /usr/bin/*
 %attr(755, root, root) /usr/sbin/*
-%attr(644, root,  man) /usr/man/man1/*
+%attr(644, root,  man) %{_mandir}/man1/*
 
 %changelog
 * Sun Nov 29 1998 Tomasz K³oczko <kloczek@rudy.mif.pg.gda.pl>
