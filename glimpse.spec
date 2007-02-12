@@ -1,5 +1,5 @@
 Summary:	Glimpse indexing and query system
-Summary(pl):	System indeksowania i wyszukiwania Glimpse
+Summary(pl.UTF-8):   System indeksowania i wyszukiwania Glimpse
 Name:		glimpse
 Version:	4.18.0
 Release:	1
@@ -22,11 +22,11 @@ to search through all your files very quickly. It can be used by
 individuals for their personal file systems as well as by
 organizations for large data collections.
 
-%description -l pl
-Glimpse jest potê¿nym systemem indeksowania i wyszukiwania informacji.
-Dziêki niemu mo¿na bardzo szybko przeszukaæ wiele plików. Mo¿e byæ
-u¿ywany przez osoby prywatne na swoich systemach plików, a tak¿e przez
-organizacje na du¿ych zbiorach danych.
+%description -l pl.UTF-8
+Glimpse jest potÄ™Å¼nym systemem indeksowania i wyszukiwania informacji.
+DziÄ™ki niemu moÅ¼na bardzo szybko przeszukaÄ‡ wiele plikÃ³w. MoÅ¼e byÄ‡
+uÅ¼ywany przez osoby prywatne na swoich systemach plikÃ³w, a takÅ¼e przez
+organizacje na duÅ¼ych zbiorach danych.
 
 %prep
 %setup -q
