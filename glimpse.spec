@@ -1,5 +1,5 @@
 Summary:	Glimpse indexing and query system
-Summary(pl.UTF-8):   System indeksowania i wyszukiwania Glimpse
+Summary(pl.UTF-8):	System indeksowania i wyszukiwania Glimpse
 Name:		glimpse
 Version:	4.18.0
 Release:	1
