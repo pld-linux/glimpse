@@ -1,13 +1,13 @@
 Summary:	Glimpse indexing and query system
 Summary(pl.UTF-8):	System indeksowania i wyszukiwania Glimpse
 Name:		glimpse
-Version:	4.18.0
+Version:	4.18.5
 Release:	1
 License:	non-profit
 Group:		Applications/Text
 #Source0:	ftp://ftp.cs.arizona.edu/glimpse/%{name}-%{version}.src.tar.gz
 Source0:	http://webglimpse.net/trial/%{name}-%{version}.tar.gz
-# Source0-md5:	f62819ef08f679bb7b468fa3dc19edd7
+# Source0-md5:	10204ab813f3bbb558e22dedf19d1dfb
 Patch0:		%{name}-optflags.patch
 Patch1:		%{name}-stdarg.patch
 URL:		http://webglimpse.net/
