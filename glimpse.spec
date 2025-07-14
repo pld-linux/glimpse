@@ -30,8 +30,8 @@ organizacje na dużych zbiorach danych.
 
 %prep
 %setup -q
-%patch0 -p1
-%patch1 -p1
+%patch -P0 -p1
+%patch -P1 -p1
 
 %build
 # don't do this - configure was manually modified, configure.in is outdated
